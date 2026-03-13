@@ -1,0 +1,6 @@
+# CPU benchmark scripts - no external dependencies
+# Uses only Python standard library (time, math, multiprocessing)
+
+# GPU & RAM benchmarks - PyTorch (GPU), NumPy (GPU + RAM)
+torch>=2.0.0
+numpy>=1.20.0
