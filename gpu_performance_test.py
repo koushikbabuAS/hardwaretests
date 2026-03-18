@@ -94,15 +94,16 @@ def main():
     total_flops, elapsed = gpu_benchmark(device, duration)
 
     gflops = total_flops / elapsed / 1e9  # billions of FLOPs per second
+    tflops = total_flops / elapsed / 1e12  # trillions of FLOPs per second
 
     print("RESULTS")
     print("-" * 50)
     print(f"  Matrix multiplies:  {int(total_flops / (2 * 4096**3)):,}")
     print(f"  Total FLOPs:        {total_flops / 1e12:.2f} trillion")
     print(f"  Time elapsed:       {elapsed:.2f} seconds")
-    print(f"  Throughput:         {gflops:,.0f} GFLOPS")
+    print(f"  Throughput:         {gflops:,.0f} GFLOPS  ({tflops:.2f} TFLOPS)")
     print("-" * 50)
-    print("\nHigher GFLOPS = better GPU performance")
+    print("\nHigher GFLOPS/TFLOPS = better GPU performance")
     print("=" * 50)
 
 
